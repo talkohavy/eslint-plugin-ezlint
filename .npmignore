@@ -1,0 +1,9 @@
+.eslintrc.json
+.prettierrc.mjs
+.prettierignore
+jsconfig.json
+.vscode/
+__test__/
+toolbox/
+.github/
+docs/

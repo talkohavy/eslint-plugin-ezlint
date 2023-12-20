@@ -1,0 +1,62 @@
+{
+  "name": "eslint-plugin-ezlint",
+  "version": "1.0.0",
+  "description": "The eslint config that goes perfectly with your prettier config.",
+  "type": "commonjs",
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
+  },
+  "bugs": {
+    "url": "https://github.com/talkohavy/eslint-plugin-ezlint/issues",
+    "email": "talkohavy@gmail.com"
+  },
+  "author": "Tal Kohavy",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint -c ./.eslintrc.json .",
+    "test": "node --test",
+    "update:eslint-docs": "eslint-doc-generator",
+    "format": "prettier . --write",
+    "check-format": "prettier . --check",
+    "preversion": "npm test",
+    "version": "npm run format",
+    "postversion": "git push && git push --tags && npm publish",
+    "prepare": "husky install"
+  },
+  "sideEffects": false,
+  "contributors": [
+    {
+      "name": "Tal Kohavy",
+      "email": "talkohavy@gmail.com",
+      "url": "https://github.com/talkohavy"
+    }
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "dependencies": {
+    "eslint-plugin-eslint-plugin": "^5.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^46.9.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "husky": "^8.0.3",
+    "requireindex": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-doc-generator": "^1.0.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=7"
+  },
+  "license": "MIT"
+}

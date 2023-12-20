@@ -1,0 +1,27 @@
+{
+  "For Loop2": {
+    "prefix": ["for", "for-const"],
+    "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
+    "description": "A for loop."
+  },
+  "My console.log": {
+    "prefix": ["c", "clg"],
+    "body": ["console.log(${0:props})"],
+    "description": "My Console Log"
+  },
+  "My console.log is": {
+    "prefix": ["c", "clgis"],
+    "body": ["console.log('${1:props} is:', ${0:props})"],
+    "description": "My Console Log Is"
+  },
+  "My console.error": {
+    "prefix": ["cle"],
+    "body": ["console.error(${0:props});"],
+    "description": "My Console Error"
+  },
+  "My console.warn": {
+    "prefix": ["clw"],
+    "body": ["console.warn(${0:props});"],
+    "description": "My Console Warn"
+  }
+}
