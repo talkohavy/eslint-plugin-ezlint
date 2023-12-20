@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-ezlint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The eslint config that goes perfectly with your prettier config.",
   "type": "commonjs",
   "keywords": ["eslint", "eslintplugin", "eslint-plugin"],
