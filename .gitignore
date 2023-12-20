@@ -4,4 +4,4 @@ node_modules
 .cache-pnpm
 .http
 .cache-eslint
-
+.npmrc
