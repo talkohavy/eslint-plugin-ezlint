@@ -767,5 +767,3 @@ function foo (n) {}
 // Into this:
 function foo(n) {}
 ```
-
-### `asdasd`

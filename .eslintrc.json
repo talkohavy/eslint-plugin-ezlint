@@ -67,6 +67,7 @@
         "allowTemplateLiterals": false // <--- disallow the use of back ticks for strings who don't either: A) include a param inside. B) break into a new line.
       }
     ],
+    "space-before-function-paren": ["error", "never"],
     "space-in-parens": ["error", "never"], // <--- "error & never" is already what prettier is doing by default. Only now you would also be alerted about it by eslint. Flags these: 1. foo( 'bar'); 2. foo('bar' ); 3. foo( 'bar' ); as errors.
 
     // ########################
