@@ -1,6 +1,7 @@
 .eslintrc.json
 .prettierrc.mjs
 .prettierignore
+.npmrc.example
 jsconfig.json
 .vscode/
 __test__/
