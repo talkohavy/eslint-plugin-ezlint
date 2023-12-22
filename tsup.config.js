@@ -22,20 +22,27 @@ export default defineConfig((_options) => ({
     const writeStreamReadmeMd = fs.createWriteStream('./dist/README.md');
     readStreamReadmeMd.pipe(writeStreamReadmeMd);
 
-    // Step 2: get the package.json file
+    // Step 2: copy .npmrc file as-is to dist
+    const readStreamNpmrc = fs.createReadStream('./.npmrc');
+    const writeStreamNpmrc = fs.createWriteStream('./dist/.npmrc');
+    readStreamNpmrc.pipe(writeStreamNpmrc);
+
+    // Step 3: modify the package.json file
+    // - Remove all scripts
+    // - Change from private to public
     const packageJson = JSON.parse(fs.readFileSync('./package.json').toString());
 
-    // Step 3: Remove all scripts
     delete packageJson.scripts;
-
-    // Step 4: Change from private to public
     packageJson.private = false;
     packageJson.publishConfig.access = 'public';
 
-    // Step 5: create new package.json file in dist
+    // Step 4: create new package.json file in dist
     fs.writeFileSync('./dist/package.json', JSON.stringify(packageJson));
 
-    console.log('DONE !!!');
-    // return () => { cleanupFunction() }
+    // Step 5: run the cleanup function
+    return () => {
+      // cleanupFunction()
+      console.log('DONE !!!');
+    };
   },
 }));
