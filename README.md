@@ -116,6 +116,10 @@ Add `ezlint` to the plugins section of your `.eslintrc` configuration file. You 
 - [- Rule 22: `space-in-parens`](#rule-22-space-in-parens)
 - [- Rule 23: `space-before-function-paren`](#rule-23-space-before-function-paren)
 
+<br/>
+
+---
+
 ### - Rule 1: `array-bracket-spacing`
 
 Rule's form:
