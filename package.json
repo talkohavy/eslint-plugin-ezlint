@@ -46,6 +46,7 @@
     "access": "restricted"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^6.15.0",
     "eslint-plugin-eslint-plugin": "^5.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^46.9.1",
