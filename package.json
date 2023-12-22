@@ -2,7 +2,7 @@
   "name": "eslint-plugin-ezlint",
   "version": "1.0.5",
   "description": "The eslint config that goes perfectly with your prettier config.",
-  "type": "commonjs",
+  "type": "module",
   "keywords": ["eslint", "eslintplugin", "eslint-plugin"],
   "repository": {
     "type": "git",
