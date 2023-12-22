@@ -2,6 +2,7 @@
   "root": true,
   "extends": ["eslint:recommended"],
   "plugins": ["import", "sort-exports", "jsdoc"],
+  "settings": { "import/resolver": { "typescript": true } },
   "env": {
     "node": true, // Solved "XXX not being recognized". XXX: module, require, process
     "browser": true, // Solved window & document object not being recognized.
