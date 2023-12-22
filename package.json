@@ -2,6 +2,7 @@
   "name": "eslint-plugin-ezlint",
   "version": "1.0.5",
   "description": "The eslint config that goes perfectly with your prettier config.",
+  "private": true,
   "type": "module",
   "keywords": ["eslint", "eslintplugin", "eslint-plugin"],
   "repository": {
@@ -16,14 +17,15 @@
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "scripts": {
+    "build": "tsup --config tsup.config.js",
     "lint": "eslint -c ./.eslintrc.json .",
     "test": "node --test",
     "update:eslint-docs": "eslint-doc-generator",
     "format": "prettier . --write",
     "check-format": "prettier . --check",
     "preversion": "npm test",
-    "version": "npm run format",
-    "postversion": "git push && git push --tags && npm publish",
+    "version": "npm run format && npm run build",
+    "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
   "sideEffects": false,
@@ -36,7 +38,7 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "access": "restricted"
   },
   "dependencies": {
     "eslint-plugin-eslint-plugin": "^5.0.0",
@@ -50,7 +52,8 @@
   "devDependencies": {
     "eslint": "^8.19.0",
     "eslint-doc-generator": "^1.0.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "tsup": "^8.0.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
