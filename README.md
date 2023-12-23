@@ -83,13 +83,26 @@ yarn install -D eslint-plugin-ezlint
 
 Add `ezlint` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
-```json
+```json title=".eslintrc.json"
 {
-    "plugins": ["ezlint"]
+    "extends": ["plugin:ezlint/recommended"]
 }
 ```
 
-## 3. Rules
+## 3. Behind the scenes - ezlint
+
+### Parser
+
+By default, eslint uses "espree" as its parser. It behaves "ok" for the most part, but it has trouble with:
+
+- importing files with extensions: `.cts`, `.mts`, `.ts`, `.tsx`, `.d.cts`, `.d.mts`, `.d.ts`.
+- using paths defined in tsconfig.json
+- resolving @types/\* definitions over plain .js/.jsx
+- imports/exports fields support in package.json
+
+That's why under the hood **ezlint** uses `eslint-import-resolver-typescript`, to mitigate all of the points mentioned above.
+
+## 4. Rules
 
 **<font size="5">Table of Contents</font>**
 
