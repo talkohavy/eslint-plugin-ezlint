@@ -2,7 +2,31 @@
   "root": true,
   "extends": ["eslint:recommended"],
   "plugins": ["import", "sort-exports", "jsdoc"],
-  "settings": { "import/resolver": { "typescript": true } },
+  "settings": {
+    // This is from the documentation of `eslint-import-resolver-typescript`:
+    // - Step 1: define import/parsers
+    "import/parsers": {
+      "@typescript-eslint/parser": ["*.ts", "*.d.ts", "*.tsx"],
+      "html": ["*.html"]
+      // espree: ['*.js', '*.jsx'], // "espree" is the default parser eslint uses.
+    },
+
+    // - Step 2: define import/resolver
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+        // project: './jsconfig.json', // use <root>/path/to/folder/tsconfig.json
+
+        // Or, use multiple tsconfigs (Useful for monorepos):
+        // -- way No. 1: use a glob pattern
+        // project: 'packages/*/tsconfig.json',
+
+        // -- way No. 2: use an array
+        // project: ['packages/module-a/tsconfig.json', 'packages/module-b/tsconfig.json'],
+      }
+    }
+  },
   "env": {
     "node": true, // Solved "XXX not being recognized". XXX: module, require, process
     "browser": true, // Solved window & document object not being recognized.
