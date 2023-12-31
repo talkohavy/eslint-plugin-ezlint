@@ -39,8 +39,16 @@
     // "ecmaFeatures": { "jsx": true } // <--- this once solved .jsx files not being linted but I guess not anymore. I see that .jsx files are being linted out-of-the-box these days.
   },
   "overrides": [
-    { "files": ["*.ts"], "parser": "@typescript-eslint/parser" },
-    { "files": ["*.d.ts"], "parser": "@typescript-eslint/parser", "rules": { "no-unused-vars": "off" } } // <--- when declaring a function, of course its parameters are going to be "unused", so we need to turn this rule off.
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "rules": { "jsdoc/require-param": "off" }
+    },
+    {
+      "files": ["*.d.ts"],
+      "parser": "@typescript-eslint/parser",
+      "rules": { "no-unused-vars": "off" } // <--- when declaring a function, of course its parameters are going to be "unused", so we need to turn this rule off.
+    }
   ],
   "rules": {
     "array-bracket-spacing": ["error", "never"], // <--- "error & never" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
