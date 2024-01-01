@@ -71,6 +71,7 @@
     "no-tabs": ["error", { "allowIndentationTabs": false }], // <--- "error" could collides with prettier's useTabs=true. Keep them in sync. That can be used just fine with Prettier as long as you don’t configure Prettier to indent using tabs, which I don't, so we're good. Even if you use the prettier rule of useTabs:true, you can still use this rule with "error", just set allowIndentationTabs to true.
     "no-trailing-spaces": "error", // <--- "error" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
     "no-multi-spaces": ["error", { "exceptions": { "Property": false } }], // <--- "error & Property=false" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
+    "no-var": "off", // <--- on rare occasions, I do want to use var (like inside of a try/catch, and then use it inside the finally)
     "object-curly-spacing": ["error", "always"], // <--- "error & always" is already what prettier is doing by default. Only now you would also be alerted about it by eslint. Turns this {a:1} into this { a: 1 }.
     "object-shorthand": "error", // <--- turns { lastName: lastName } to { lastName }.
     "prefer-arrow-callback": ["error", { "allowUnboundThis": true }], // <--- "error" could collide with prettier. The collision occurs when the "arrow-body-style" eslint rule is set to "error" and the "arrowParens" prettier rule set to "avoid". However, since my "arrowParens" rule is set to "always", we're good. There's no collision. Turns this `foo(function(a) { return a; })` into this `foo((a) => a)`.
@@ -202,7 +203,7 @@
     "jsdoc/require-yields-check": "warn", // Recommended
     "jsdoc/sort-tags": "warn", // <--- sort @tags. This is not an alphabetic sorting.
     "jsdoc/tag-lines": ["warn", "always", { "count": 0, "applyToEndTag": false }], // <--- Recommended. Disallow empty lines between two annotation tags. Note! A "count" of 1+ conflicts with the "jsdoc/sort-tags" rule.
-    "jsdoc/valid-types": "warn" // Recommended
+    "jsdoc/valid-types": "warn", // Recommended
     // "jsdoc/require-returns": "warn", // Recommended
     // "jsdoc/check-examples": "warn", // <--- This rule cannot yet be supported for ESLint 8; you should either downgrade to ESLint 7 or disable this rule.
     // "jsdoc/no-missing-syntax": "warn" , // <--- this rule is a rather complex one, and does not add much value.
@@ -217,8 +218,25 @@
     // "jsdoc/require-property-description": "warn", // Recommended. I left it off. Sometimes a property is self explanatory, and doesn't need a description.
     // "jsdoc/require-returns-description": "warn", // Recommended
 
+    // ############################
+    // Rule Set 6: typescript rules
+    // ############################
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "all",
+        "argsIgnorePattern": "(^_|^req$|^res$|^next$)",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "^React$"
+      }
+    ]
+
     // #####################
-    // Rule Set 6: Rule Bank
+    // Rule Set 7: Rule Bank
     // #####################
     // "curly": "error", // <--- "error" could collide with prettier. Enforces use of curly braces to avoid one-liners. I like one-liners when possible, and the removal of curly braces whenever possible.
     // "eqeqeq": "error", // <--- It is considered good practice to use the type-safe equality operators === and !== instead of their regular counterparts == and !=.
