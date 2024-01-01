@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "plugins": ["import", "sort-exports", "jsdoc"],
   "settings": {
     // This is from the documentation of `eslint-import-resolver-typescript`:
@@ -38,16 +38,11 @@
     "sourceType": "module" // <--- Solved import & export not being recognized.
     // "ecmaFeatures": { "jsx": true } // <--- this once solved .jsx files not being linted but I guess not anymore. I see that .jsx files are being linted out-of-the-box these days.
   },
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
       "files": ["*.ts"],
-      "parser": "@typescript-eslint/parser",
       "rules": { "jsdoc/require-param": "off" }
-    },
-    {
-      "files": ["*.d.ts"],
-      "parser": "@typescript-eslint/parser",
-      "rules": { "no-unused-vars": "off" } // <--- when declaring a function, of course its parameters are going to be "unused", so we need to turn this rule off.
     }
   ],
   "rules": {
@@ -76,19 +71,6 @@
     "no-tabs": ["error", { "allowIndentationTabs": false }], // <--- "error" could collides with prettier's useTabs=true. Keep them in sync. That can be used just fine with Prettier as long as you don’t configure Prettier to indent using tabs, which I don't, so we're good. Even if you use the prettier rule of useTabs:true, you can still use this rule with "error", just set allowIndentationTabs to true.
     "no-trailing-spaces": "error", // <--- "error" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
     "no-multi-spaces": ["error", { "exceptions": { "Property": false } }], // <--- "error & Property=false" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all", // <--- Should global variables be checked too? Or just the local ones? Options are: "all" | "local". "all" checks all variables for usage, including those in the global scope. This is the default setting. "local" checks only that locally-declared variables are used but will allow global variables to be unused.
-        "args": "all", // <--- Should all arguments of a function be used? Options are: "all" | "after-used" | "none". "after-used" - unused positional arguments that occur before the last used argument will not be checked, but all named arguments and all positional arguments after the last used argument will be checked. "all" - all named arguments must be used. "none" - do not check arguments.
-        "argsIgnorePattern": "(^_|^req$|^res$|^next$)",
-        "caughtErrors": "all", // <--- In a try/catch block, are you using the error object? Options are: "all" | "none" (default). "all" - error argument must be used. "none" - do not check the error object.
-        "caughtErrorsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_", // <--- When destructuring an array like so: const [first, _iAmUnused, third] = arr;
-        "ignoreRestSiblings": false, // <--- if true, then when doing : const { someVar, ...rest } = obj; someVar will NOT be marked as unused.
-        "varsIgnorePattern": "^React$"
-      }
-    ],
     "object-curly-spacing": ["error", "always"], // <--- "error & always" is already what prettier is doing by default. Only now you would also be alerted about it by eslint. Turns this {a:1} into this { a: 1 }.
     "object-shorthand": "error", // <--- turns { lastName: lastName } to { lastName }.
     "prefer-arrow-callback": ["error", { "allowUnboundThis": true }], // <--- "error" could collide with prettier. The collision occurs when the "arrow-body-style" eslint rule is set to "error" and the "arrowParens" prettier rule set to "avoid". However, since my "arrowParens" rule is set to "always", we're good. There's no collision. Turns this `foo(function(a) { return a; })` into this `foo((a) => a)`.
@@ -261,5 +243,18 @@
     //   }
     // ],
     // "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }],
+    // "no-unused-vars": [
+    //   "error",
+    //   {
+    //     "vars": "all", // <--- Should global variables be checked too? Or just the local ones? Options are: "all" | "local". "all" checks all variables for usage, including those in the global scope. This is the default setting. "local" checks only that locally-declared variables are used but will allow global variables to be unused.
+    //     "args": "all", // <--- Should all arguments of a function be used? Options are: "all" | "after-used" | "none". "after-used" - unused positional arguments that occur before the last used argument will not be checked, but all named arguments and all positional arguments after the last used argument will be checked. "all" - all named arguments must be used. "none" - do not check arguments.
+    //     "argsIgnorePattern": "(^_|^req$|^res$|^next$)",
+    //     "caughtErrors": "all", // <--- In a try/catch block, are you using the error object? Options are: "all" | "none" (default). "all" - error argument must be used. "none" - do not check the error object.
+    //     "caughtErrorsIgnorePattern": "^_",
+    //     "destructuredArrayIgnorePattern": "^_", // <--- When destructuring an array like so: const [first, _iAmUnused, third] = arr;
+    //     "ignoreRestSiblings": false, // <--- if true, then when doing : const { someVar, ...rest } = obj; someVar will NOT be marked as unused.
+    //     "varsIgnorePattern": "^React$"
+    //   }
+    // ],
   }
 }
