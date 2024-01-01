@@ -187,7 +187,6 @@
     "jsdoc/no-blank-block-descriptions": "warn",
     "jsdoc/no-defaults": "warn", // <--- This rule reports defaults being used on the relevant portion of @param or @default.
     "jsdoc/no-multi-asterisks": ["warn", { "allowWhitespace": true }], // Recommended
-    "jsdoc/no-undefined-types": "warn", // <--- Recommended. Besides some expected built-in types, prohibits any types not specified as globals or within @typedef
     "jsdoc/require-asterisk-prefix": "warn", // <--- all jsdoc lines must start with asterisks. as
     "jsdoc/require-hyphen-before-param-description": "warn",
     "jsdoc/require-param": "warn", // <--- Recommended. Requires that all function parameters are documented with a @param tag.
@@ -209,6 +208,7 @@
     // "jsdoc/no-missing-syntax": "warn" , // <--- this rule is a rather complex one, and does not add much value.
     // "jsdoc/no-restricted-syntax": "error",
     // "jsdoc/no-types": "warn", // <--- turns this: `@param {object} obj1` into this: `@param obj1`. Disallows types for params.
+    // "jsdoc/no-undefined-types": "warn", // <--- Recommended. Besides some expected built-in types, prohibits any types not specified as globals or within @typedef. Commented out because it kept reporting undefined type when using a type declared above as typedef.
     // "jsdoc/require-description": "warn",
     // "jsdoc/require-description-complete-sentence": ["warn", { "abbreviations": ["empty."] }],
     // "jsdoc/require-example": "warn",
@@ -221,6 +221,7 @@
     // ############################
     // Rule Set 6: typescript rules
     // ############################
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
