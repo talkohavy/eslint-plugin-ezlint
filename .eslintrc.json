@@ -177,7 +177,7 @@
     "jsdoc/check-values": "warn", // <--- Recommended. Checks for expected content within some miscellaneous tags (@version, @since, @license, @author).
     "jsdoc/empty-tags": "warn", // <--- Recommended. Checks tags that are expected to be empty. i.e. @private, @readonly, @abstract, @async, etc.
     "jsdoc/implements-on-classes": "warn", // Recommended
-    "jsdoc/informative-docs": "warn", // <--- Reports on JSDoc texts that only repeats their attached name. i.e. `* @param {any} obj - The obj`.
+    "jsdoc/informative-docs": ["warn", { "excludedTags": ["default"] }], // <--- Reports on JSDoc texts that only repeats their attached name. i.e. `* @param {any} obj - The obj`.
     "jsdoc/match-description": [
       "warn",
       { "matchDescription": "^\n?([*A-Z`\\d_][\\s\\S]*([.?!`]|\\*\\w+\\*{1,3})\\s*)?$" }
