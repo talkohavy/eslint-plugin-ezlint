@@ -180,7 +180,7 @@
     "jsdoc/informative-docs": ["warn", { "excludedTags": ["default"] }], // <--- Reports on JSDoc texts that only repeats their attached name. i.e. `* @param {any} obj - The obj`.
     "jsdoc/match-description": [
       "warn",
-      { "matchDescription": "^\n?([*A-Z`\\d_][\\s\\S]*([.?!`]|\\*\\w+\\*{1,3})\\s*)?$" }
+      { "matchDescription": "^\n?([*A-Z`\\d_][\\s\\S]*([.?!:`]|\\*\\w+\\*{1,3})\\s*)?$" }
     ],
     "jsdoc/multiline-blocks": ["error", { "noSingleLineBlocks": true, "singleLineTags": ["*"] }], // Recommended. Ensure that a JSDoc should not have text on the "0th" line.
     "jsdoc/no-bad-blocks": "warn", // <--- bad jsdoc looks like /* */, or even /*** */. good jsdoc looks like /** */, meaning with exactly 2 asterisks.
