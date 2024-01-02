@@ -167,7 +167,7 @@
     // #######################
     "jsdoc/check-access": "warn", // <--- Recommended. Enforces valid @access tags.
     "jsdoc/check-alignment": "warn", // <--- Recommended. aligns the asterisks (*) of a JSDoc.
-    "jsdoc/check-indentation": ["warn", { "excludeTags": ["param", "returns", "example"] }], // <--- Checks for invalid padding inside JSDoc blocks
+    "jsdoc/check-indentation": ["warn", { "excludeTags": ["type", "param", "returns", "example"] }], // <--- Checks for invalid padding inside JSDoc blocks
     "jsdoc/check-line-alignment": "warn", // <--- Disallow double space between: * & @, annotation & '{', '}' & param name, param name & param description.
     "jsdoc/check-param-names": "warn", // <--- Recommended. Check the @param name against the param name used in the function's signature.
     "jsdoc/check-property-names": "warn", // Recommended
