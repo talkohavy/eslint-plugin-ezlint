@@ -12,7 +12,8 @@
     }
   },
   "scripts": {
-    "build": "tsup --config tsup.config.js",
+    "build": "node ./esbuild.config.mjs --dev tsc --watch esbuild --version",
+    "build2": "tsup --config tsup.config.js",
     "lint": "eslint -c ./.eslintrc.json .",
     "test": "node --test",
     "format": "prettier . --write",
@@ -22,7 +23,13 @@
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
-  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "ezlint",
+    "eslint-plugin-ezlint"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
@@ -53,10 +60,10 @@
     "eslint-plugin-sort-exports": "^0.8.0"
   },
   "devDependencies": {
+    "esbuild": "^0.19.11",
     "eslint": "^8.19.0",
     "husky": "^8.0.3",
-    "prettier": "^3.1.1",
-    "tsup": "^8.0.1"
+    "prettier": "^3.1.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
