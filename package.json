@@ -3,18 +3,8 @@
   "version": "1.0.26",
   "description": "The eslint config that goes perfectly with your prettier config.",
   "private": true,
+  "main": "./src/index.js",
   "type": "module",
-  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
-  },
-  "bugs": {
-    "url": "https://github.com/talkohavy/eslint-plugin-ezlint/issues",
-    "email": "talkohavy@gmail.com"
-  },
-  "author": "Tal Kohavy",
-  "main": "./lib/index.js",
   "exports": {
     ".": {
       "import": "./index.js",
@@ -32,7 +22,17 @@
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
+  },
+  "bugs": {
+    "url": "https://github.com/talkohavy/eslint-plugin-ezlint/issues",
+    "email": "talkohavy@gmail.com"
+  },
   "sideEffects": false,
+  "author": "Tal Kohavy",
   "contributors": [
     {
       "name": "Tal Kohavy",
