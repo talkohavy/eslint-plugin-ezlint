@@ -4,7 +4,7 @@ export const importRules = {
   'import/newline-after-import': ['error', { count: 1, considerComments: true }],
   'import/first': 'error',
   'import/exports-last': 'error',
-  'import/extensions': ['error', 'never', { js: 'always', ignorePackages: true }],
+  'import/extensions': ['error', 'always', { js: 'ignorePackages' }],
   'import/order': [
     'error',
     {
