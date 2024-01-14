@@ -12,16 +12,13 @@
     }
   },
   "scripts": {
-    "clean": "rm -rf node_modules",
-    "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
-    "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
-    "format": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
-    "format-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
-    "prebuild": "rm -rf dist",
-    "build": "node ./esbuild.config.mjs",
+    "build": "tsup --config tsup.config.js",
+    "lint": "eslint -c ./.eslintrc.json .",
     "test": "node --test",
+    "format": "prettier . --write",
+    "check-format": "prettier . --check",
     "preversion": "npm test",
-    "version": "npm run format && npm run prebuild && npm run build",
+    "version": "npm run format && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
@@ -56,10 +53,10 @@
     "eslint-plugin-sort-exports": "^0.8.0"
   },
   "devDependencies": {
-    "esbuild": "^0.19.11",
     "eslint": "^8.19.0",
     "husky": "^8.0.3",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "tsup": "^8.0.1"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
