@@ -2,7 +2,7 @@
   "name": "eslint-plugin-ezlint",
   "version": "1.0.29",
   "description": "The eslint config that goes perfectly with your prettier config.",
-  "private": true,
+  "private": "true",
   "main": "./src/index.js",
   "type": "module",
   "exports": {
@@ -12,14 +12,16 @@
     }
   },
   "scripts": {
-    "build": "node ./esbuild.config.mjs --dev tsc --watch esbuild --version",
-    "build2": "tsup --config tsup.config.js",
-    "lint": "eslint -c ./.eslintrc.json .",
+    "clean": "rm -rf node_modules",
+    "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "format": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
+    "format-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
+    "prebuild": "rm -rf dist",
+    "build": "node ./esbuild.config.mjs",
     "test": "node --test",
-    "format": "prettier . --write",
-    "check-format": "prettier . --check",
     "preversion": "npm test",
-    "version": "npm run format && npm run build",
+    "version": "npm run format && npm run prebuild && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
