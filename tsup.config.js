@@ -1,10 +1,12 @@
 import fs from 'fs';
 import { defineConfig } from 'tsup';
 
+const outDir = 'dist';
+
 // The options here is derived from CLI flags.
 const tsupConfig = defineConfig((_options) => ({
   entry: ['src/index.js'],
-  outDir: 'dist', // <--- defaults to dist
+  outDir, // <--- defaults to dist
   bundle: true,
   minify: true, // <--- You can minify the output, resulting into lower bundle sizes.
   format: ['cjs'], // <-- If package.json type is set to module, the filenames are: [.js,.cjs], else: [.mjs, .js].
@@ -33,13 +35,13 @@ const tsupConfig = defineConfig((_options) => ({
 
 function copyTheReadmeFile() {
   const readStreamReadmeMd = fs.createReadStream('./README.md');
-  const writeStreamReadmeMd = fs.createWriteStream('./dist/README.md');
+  const writeStreamReadmeMd = fs.createWriteStream(`./${outDir}/README.md`);
   readStreamReadmeMd.pipe(writeStreamReadmeMd);
 }
 
 function copyTheNpmrcFile() {
   const readStreamNpmrc = fs.createReadStream('./.npmrc');
-  const writeStreamNpmrc = fs.createWriteStream('./dist/.npmrc');
+  const writeStreamNpmrc = fs.createWriteStream(`./${outDir}/.npmrc`);
   readStreamNpmrc.pipe(writeStreamNpmrc);
 }
 
@@ -53,7 +55,7 @@ function copyThePackageJsonFile() {
   delete packageJson.private;
   packageJson.publishConfig.access = 'public';
 
-  fs.writeFileSync('./dist/package.json', JSON.stringify(packageJson));
+  fs.writeFileSync(`./${outDir}/package.json`, JSON.stringify(packageJson));
 }
 
 export default tsupConfig;

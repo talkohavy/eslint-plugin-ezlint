@@ -71,10 +71,10 @@
     ],
     "no-constant-condition": "off", // <--- eslint/recommended set this to "error" by default. Disallows if(true){}.
     "no-debugger": "warn", // default value is error. Disallow the use of the debugger keyword.
-    "no-multiple-empty-lines": ["error", { "max": 1 }], // <--- "error & max=1" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }], // <--- "error & max=1" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
     "no-tabs": ["error", { "allowIndentationTabs": false }], // <--- "error" could collides with prettier's useTabs=true. Keep them in sync. That can be used just fine with Prettier as long as you don’t configure Prettier to indent using tabs, which I don't, so we're good. Even if you use the prettier rule of useTabs:true, you can still use this rule with "error", just set allowIndentationTabs to true.
     "no-trailing-spaces": "error", // <--- "error" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
-    "no-multi-spaces": ["error", { "exceptions": { "Property": false } }], // <--- "error & Property=false" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
+    "no-multi-spaces": ["error", { "exceptions": { "BinaryExpression": false, "Property": false } }], // <--- "error & Property=false" is already what prettier is doing by default. Only now you would also be alerted about it by eslint.
     "no-var": "off", // <--- on rare occasions, I do want to use var (like inside of a try/catch, and then use it inside the finally)
     "object-curly-spacing": ["error", "always"], // <--- "error & always" is already what prettier is doing by default. Only now you would also be alerted about it by eslint. Turns this {a:1} into this { a: 1 }.
     "object-shorthand": "error", // <--- turns { lastName: lastName } to { lastName }.
@@ -93,6 +93,51 @@
     ],
     "space-before-function-paren": ["error", { "anonymous": "always", "named": "never", "asyncArrow": "always" }],
     "space-in-parens": ["error", "never"], // <--- "error & never" is already what prettier is doing by default. Only now you would also be alerted about it by eslint. Flags these: 1. foo( 'bar'); 2. foo('bar' ); 3. foo( 'bar' ); as errors.
+    // All of these are new:
+    "arrow-spacing": "error",
+    "space-before-blocks": "error",
+    "dot-location": ["error", "property"],
+    "dot-notation": "error",
+    "eol-last": "error",
+    "func-call-spacing": ["error", "never"],
+    "function-call-argument-newline": ["error", "consistent"],
+    "semi": "error",
+    "jsx-quotes": ["error", "prefer-single"],
+    "key-spacing": "error", // <--- alerts when there's a space between an object key and the colon to the right of it.
+    "keyword-spacing": "error", // <--- alerts on missing space between '}else' or 'else if{'.
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "multiline": true, "consistent": true },
+        "ObjectPattern": { "multiline": true, "consistent": true },
+        "ImportDeclaration": { "multiline": true, "consistent": true },
+        "ExportDeclaration": { "multiline": true, "consistent": true }
+      }
+    ],
+    "operator-linebreak": [
+      "error",
+      "none",
+      { "overrides": { "?": "ignore", ":": "ignore", "&&": "ignore", "=": "ignore", "||": "ignore" } }
+    ],
+    "new-parens": ["error", "always"], // <--- turns this: "new Person" into this: "new Person()".
+    "no-bitwise": "error", // <--- to help catch cases where  I might have accidentally used & when actually wanting to use && instead.
+    "no-extra-parens": ["error", "functions"], // <--- turns this: const x = (1); into this: const x = 1;
+    "no-floating-decimal": "error", // <--- turns this: .2 and 5. into this: 0.2 and 5.
+    "no-invalid-this": "error", // <--- alerts when you try using `this` keyword inside an arrow function (undefined).
+    "no-template-curly-in-string": "error", // <--- This rule warns when a regular string contains what looks like a template literal placeholder.
+    "no-useless-computed-key": "error", // <--- disallow un-needed computed key in objects, like: ['0']: 0 , ['0+1,234']: 0 , [0]: 0 , ['x']: 0 , ['x']() {}.
+    "no-useless-rename": "error", // <--- disallow same name rename: import { a as a } from './b.js';
+    "no-useless-return": "error",
+    "no-whitespace-before-property": "error", // <--- turns this: obj. a into this: obj.a
+    "padded-blocks": ["error", "never"], // <--- alert about stuff that prettier fixes
+    "quote-props": ["error", "as-needed"], // <--- just like prettier: if object keys don't need quotes - remove them!
+    "rest-spread-spacing": "error", // <--- just like prettier, warns about a space between the ... and the variable name itself.
+    "semi-spacing": "error", // just like prettier, warns about a space before a semi-colon.
+    "semi-style": "error", // <--- just like prettier, semi-colon style is alerted.
+    "space-infix-ops": "error", // just like prettier, turns this: 'props'||'father' into this: 'props' || 'father', same with + sign, = sign, etc.
+    "space-unary-ops": "error", // <--- just like prettier, turns this: ++ foo into this: ++foo, same goes for foo --, + "3".
+    "spaced-comment": "error", // <--- just like prettier, removes trailing spaces at the end of comments.
+    "template-curly-spacing": "error", // <--- just like prettier, alerts when `hello, ${ people.name}!`; or when `hello, ${people.name }!`;
 
     // ########################
     // Rule Set 2: import rules
@@ -243,6 +288,7 @@
     // #####################
     // Rule Set 7: Rule Bank
     // #####################
+    // "array-element-newline": ["error", "consistent"], // <--- seriesDataExample.js found a case where it collides with prettier.
     // "curly": "error", // <--- "error" could collide with prettier. Enforces use of curly braces to avoid one-liners. I like one-liners when possible, and the removal of curly braces whenever possible.
     // "eqeqeq": "error", // <--- It is considered good practice to use the type-safe equality operators === and !== instead of their regular counterparts == and !=.
     // "linebreak-style": ["error", "unix"],
