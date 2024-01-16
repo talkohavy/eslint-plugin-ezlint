@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-ezlint",
-  "version": "1.0.35",
+  "version": "1.1.0",
   "description": "The eslint config that goes perfectly with your prettier config.",
   "private": "true",
   "main": "./src/index.js",
@@ -24,13 +24,7 @@
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "ezlint",
-    "eslint-plugin-ezlint"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
