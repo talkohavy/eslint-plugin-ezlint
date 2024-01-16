@@ -1,8 +1,4 @@
-import { baseRules } from './rules/base.rules.js';
-import { exportRules } from './rules/export.rules.js';
-import { importRules } from './rules/import.rules.js';
-import { jsdocRules } from './rules/jsdoc.rules.js';
-import { typescriptRules } from './rules/typescript.rules.js';
+import { baseRules, exportRules, importRules, jsdocRules, typescriptRules } from './rules/common/index';
 
 export default {
   configs: {
@@ -55,6 +51,9 @@ export default {
         ...typescriptRules,
         'no-constant-condition': 'off',
       },
+    },
+    react: {
+      extends: ['plugin:react/all'],
     },
   },
 };

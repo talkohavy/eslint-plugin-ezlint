@@ -24,7 +24,13 @@
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
-  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "ezlint",
+    "eslint-plugin-ezlint"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
@@ -52,6 +58,7 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^46.9.1",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-sort-exports": "^0.8.0"
   },
   "devDependencies": {
