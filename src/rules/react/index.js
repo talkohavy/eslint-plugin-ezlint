@@ -1,7 +1,7 @@
-import { importRules } from '../common/import.rules';
-import { reactRules } from './react.rules';
-import { reactHooksRules } from './reactHooks.rules';
-import { tailwindRules } from './tailwind.rules';
+import { importRules } from './import.rules.js';
+import { reactRules } from './react.rules.js';
+import { reactHooksRules } from './reactHooks.rules.js';
+import { tailwindRules } from './tailwind.rules.js';
 
 export const reactConfig = {
   extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended'],
