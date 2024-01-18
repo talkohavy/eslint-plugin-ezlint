@@ -3,8 +3,11 @@ import { reactRules } from './react.rules.js';
 import { reactHooksRules } from './reactHooks.rules.js';
 import { tailwindRules } from './tailwind.rules.js';
 
+// import { jsxA11yRules } from './jsxA11y.rules';
+
 export const reactConfig = {
   extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended'],
+  // plugins: ['tailwindcss', 'jsx-a11y'],
   plugins: ['tailwindcss'],
   settings: {
     react: { version: 'detect' },
@@ -17,5 +20,6 @@ export const reactConfig = {
     ...reactHooksRules,
     ...importRules,
     ...tailwindRules,
+    // ...jsxA11yRules,
   },
 };
