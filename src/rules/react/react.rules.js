@@ -17,7 +17,7 @@ export const reactRules = {
     'error',
     {
       allow: 'always', // <--- defaults to "always". Options are: ['as-needed', 'always']. as-needed means, if your file's extension is jsx? then it must contain JSX syntax! otherwise it would be considered an error. "always" however doesn't give a fuck. It allows all files to have a .jsx extension, whether they have JSX in them or not.
-      extensions: ['.jsx'], // <--- defaults to [".jsx"]. Decides which extensions can contain JSX syntax.
+      extensions: ['.jsx', '.tsx'], // <--- defaults to [".jsx"]. Decides which extensions can contain JSX syntax.
     },
   ],
 };
