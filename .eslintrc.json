@@ -209,7 +209,7 @@
     // Rule Set 4: sort-exports rules
     // ##############################
     // NOTE: Comes from the plugin eslint-plugin-sort-exports.
-    "sort-exports/sort-exports": ["error", { "sortDir": "asc" }],
+    "sort-exports/sort-exports": ["error", { "sortDir": "asc", "sortExportKindFirst": "type" }],
 
     // #######################
     // Rule Set 5: jsdoc rules
