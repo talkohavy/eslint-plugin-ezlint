@@ -22,6 +22,7 @@
   "editor.colorDecorators": true, // <--- Controls whether the editor should render the inline color decorators and color picker.
   "editor.dragAndDrop": false, // <--- defaults to "true". Decides if drag and drop of code lines is allowed/possible. I always hated this feature.
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.quickSuggestions": { "strings": "on" },
     "editor.suggest.insertMode": "replace" // defaults to insert
   },

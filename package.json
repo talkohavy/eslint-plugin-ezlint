@@ -23,8 +23,7 @@
     "test": "node --test",
     "preversion": "npm test",
     "version": "npm run format-fix && npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm publish",
-    "prepare": "husky install"
+    "postversion": "git push && git push --tags && cd dist && npm publish"
   },
   "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
@@ -49,21 +48,21 @@
     "access": "restricted"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.15.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^46.9.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-sort-exports": "^0.8.0",
-    "eslint-plugin-tailwindcss": "^3.14.0"
+    "eslint-plugin-jsdoc": "^48.2.1",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-sort-exports": "^0.9.1",
+    "eslint-plugin-tailwindcss": "^3.14.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.2",
-    "eslint": "^8.19.0",
-    "husky": "^8.0.3",
-    "prettier": "^3.1.1",
-    "tsup": "^8.0.1"
+    "@biomejs/biome": "1.6.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2"
   },
   "engines": {
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
