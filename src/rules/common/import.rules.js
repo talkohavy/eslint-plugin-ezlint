@@ -4,7 +4,7 @@ export const importRules = {
   'import/newline-after-import': ['error', { count: 1, considerComments: true }],
   'import/first': 'error',
   'import/exports-last': 'error',
-  'import/extensions': ['error', 'always', { js: 'ignorePackages', mjs: 'ignorePackages', ts: 'never' }],
+  'import/extensions': ['error', 'always', { ts: 'never' }], // <--- When I did this: {js: 'ignorePackages', mjs: 'ignorePackages'}, imports without .js extension were not reported. (i.e. logger transports index.js).
   'import/order': [
     'error',
     {
