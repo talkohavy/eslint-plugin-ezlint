@@ -104,36 +104,7 @@ That's why under the hood **ezlint** uses `eslint-import-resolver-typescript`, t
 
 ## 4. Rules
 
-**<font size="5">Table of Contents</font>**
-
-- [- Rule 1: `array-bracket-spacing`](#rule-1-array-bracket-spacing)
-- [- Rule 2: `arrow-body-style`](#rule-2-arrow-body-style)
-- [- Rule 3: `comma-dangle`](#rule-3-comma-dangle)
-- [- Rule 4: `comma-spacing`](#rule-4-comma-spacing)
-- [- Rule 5: `comma-style`](#rule-5-comma-style)
-- [- Rule 6: `computed-property-spacing`](#rule-6-computed-property-spacing)
-- [- Rule 7: `max-len`](#rule-7-max-len)
-- [- Rule 8: `no-constant-condition`](#rule-8-no-constant-condition)
-- [- Rule 9: `no-debugger`](#rule-9-no-debugger)
-- [- Rule 10: `no-multiple-empty-lines`](#rule-10-no-multiple-empty-lines)
-- [- Rule 11: `no-tabs`](#rule-11-no-tabs)
-- [- Rule 12: `no-trailing-spaces`](#rule-12-no-trailing-spaces)
-- [- Rule 13: `no-multi-spaces`](#rule-13-no-multi-spaces)
-- [- Rule 14: `no-unused-vars`](#rule-14-no-unused-vars)
-- [- Rule 15: `object-curly-spacing`](#rule-15-object-curly-spacing)
-- [- Rule 16: `object-shorthand`](#rule-16-object-shorthand)
-- [- Rule 17: `prefer-arrow-callback`](#rule-17-prefer-arrow-callback)
-- [- Rule 18: `prefer-destructuring`](#rule-18-prefer-destructuring)
-- [- Rule 19: `prefer-const`](#rule-19-prefer-const)
-- [- Rule 21: `quotes`](#rule-21-quotes)
-- [- Rule 22: `space-in-parens`](#rule-22-space-in-parens)
-- [- Rule 23: `space-before-function-paren`](#rule-23-space-before-function-paren)
-
-<br/>
-
----
-
-The rules are divided into 6 groups:
+The rules inside the `recommended` config are divided into 6 groups:
 
 - base Rules
 - stylistic Rules
