@@ -7,7 +7,7 @@ import { typescriptRules } from './rules/typescript.rules.js';
 
 export const recommendedConfig = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['@stylistic', 'import', 'sort-exports', 'jsdoc', '@typescript-eslint'],
+  plugins: ['markdown', '@stylistic', 'import', 'sort-exports', 'jsdoc', '@typescript-eslint'],
   settings: {
     // This is from the documentation of `eslint-import-resolver-typescript`:
     // - Step 1: define import/parsers
@@ -44,6 +44,15 @@ export const recommendedConfig = {
     {
       files: ['*.d.ts'],
       rules: { '@typescript-eslint/no-unused-vars': 'off' },
+    },
+    {
+      files: ['**/*.md'],
+      processor: 'markdown/markdown',
+    },
+    // applies only to code blocks
+    {
+      files: ['**/*.md/*.js'],
+      rules: { strict: 'off' },
     },
   ],
   rules: {
