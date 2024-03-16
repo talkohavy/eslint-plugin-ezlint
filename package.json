@@ -25,13 +25,7 @@
     "version": "npm run format-fix && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish"
   },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "ezlint",
-    "eslint-plugin-ezlint"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
@@ -75,7 +69,7 @@
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=7"
+    "eslint": ">=8"
   },
   "license": "MIT"
 }

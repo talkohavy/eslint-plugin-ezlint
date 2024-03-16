@@ -2,11 +2,12 @@ import { baseRules } from './rules/base.rules.js';
 import { exportRules } from './rules/export.rules.js';
 import { importRules } from './rules/import.rules.js';
 import { jsdocRules } from './rules/jsdoc.rules.js';
+import { stylisticRules } from './rules/stylistic.rules';
 import { typescriptRules } from './rules/typescript.rules.js';
 
 export const recommendedConfig = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['import', 'sort-exports', 'jsdoc', '@typescript-eslint'],
+  plugins: ['@stylistic', 'import', 'sort-exports', 'jsdoc', '@typescript-eslint'],
   settings: {
     // This is from the documentation of `eslint-import-resolver-typescript`:
     // - Step 1: define import/parsers
@@ -47,6 +48,7 @@ export const recommendedConfig = {
   ],
   rules: {
     ...baseRules,
+    ...stylisticRules,
     ...importRules,
     ...exportRules,
     ...jsdocRules,
