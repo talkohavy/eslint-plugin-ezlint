@@ -1,8 +1,8 @@
-import { baseRules } from './base.rules.js';
-import { exportRules } from './export.rules.js';
-import { importRules } from './import.rules.js';
-import { jsdocRules } from './jsdoc.rules.js';
-import { typescriptRules } from './typescript.rules.js';
+import { baseRules } from './rules/base.rules.js';
+import { exportRules } from './rules/export.rules.js';
+import { importRules } from './rules/import.rules.js';
+import { jsdocRules } from './rules/jsdoc.rules.js';
+import { typescriptRules } from './rules/typescript.rules.js';
 
 export const recommendedConfig = {
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],

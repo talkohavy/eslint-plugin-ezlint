@@ -1,7 +1,7 @@
-import { importRules } from './import.rules.js';
-import { reactRules } from './react.rules.js';
-import { reactHooksRules } from './reactHooks.rules.js';
-import { tailwindRules } from './tailwind.rules.js';
+import { importRules } from './rules/import.rules.js';
+import { reactRules } from './rules/react.rules.js';
+import { reactHooksRules } from './rules/reactHooks.rules.js';
+import { tailwindRules } from './rules/tailwind.rules.js';
 
 // import { jsxA11yRules } from './jsxA11y.rules';
 
