@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { defineConfig } from 'tsup';
 
 const outDir = 'dist';
@@ -19,12 +18,6 @@ const tsupConfig = defineConfig((_options) => ({
   // target: , // <--- The value for target defaults to compilerOptions.target in your tsconfig.json, or node14 if unspecified. For more information check out esbuild's target option.
   // env: process.NODE_ENV,
   async onSuccess() {
-    copyTheReadmeFile();
-
-    copyTheNpmrcFile();
-
-    copyThePackageJsonFile();
-
     // Step 5: run the cleanup function
     return () => {
       // cleanupFunction()
@@ -33,29 +26,29 @@ const tsupConfig = defineConfig((_options) => ({
   },
 }));
 
-function copyTheReadmeFile() {
-  const readStreamReadmeMd = fs.createReadStream('./README.md');
-  const writeStreamReadmeMd = fs.createWriteStream(`./${outDir}/README.md`);
-  readStreamReadmeMd.pipe(writeStreamReadmeMd);
-}
+// function copyTheReadmeFile() {
+//   const readStreamReadmeMd = fs.createReadStream('./README.md');
+//   const writeStreamReadmeMd = fs.createWriteStream(`./${outDir}/README.md`);
+//   readStreamReadmeMd.pipe(writeStreamReadmeMd);
+// }
 
-function copyTheNpmrcFile() {
-  const readStreamNpmrc = fs.createReadStream('./.npmrc');
-  const writeStreamNpmrc = fs.createWriteStream(`./${outDir}/.npmrc`);
-  readStreamNpmrc.pipe(writeStreamNpmrc);
-}
+// function copyTheNpmrcFile() {
+//   const readStreamNpmrc = fs.createReadStream('./.npmrc');
+//   const writeStreamNpmrc = fs.createWriteStream(`./${outDir}/.npmrc`);
+//   readStreamNpmrc.pipe(writeStreamNpmrc);
+// }
 
-function copyThePackageJsonFile() {
-  const packageJson = JSON.parse(fs.readFileSync('./package.json').toString());
+// function copyThePackageJsonFile() {
+//   const packageJson = JSON.parse(fs.readFileSync('./package.json').toString());
 
-  // - Remove all scripts
-  delete packageJson.scripts;
+//   // - Remove all scripts
+//   delete packageJson.scripts;
 
-  // - Change from private to public
-  delete packageJson.private;
-  packageJson.publishConfig.access = 'public';
+//   // - Change from private to public
+//   delete packageJson.private;
+//   packageJson.publishConfig.access = 'public';
 
-  fs.writeFileSync(`./${outDir}/package.json`, JSON.stringify(packageJson));
-}
+//   fs.writeFileSync(`./${outDir}/package.json`, JSON.stringify(packageJson));
+// }
 
 export default tsupConfig;
