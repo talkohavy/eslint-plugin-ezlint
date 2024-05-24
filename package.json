@@ -25,13 +25,7 @@
     "version": "npm run format-fix && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish"
   },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "ezlint",
-    "eslint-plugin-ezlint"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
