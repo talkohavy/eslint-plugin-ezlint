@@ -21,7 +21,7 @@
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.mjs --ignore-path .prettierignore",
     "build": "tsup --config tsup.config.js",
     "test": "node --test",
-    "cs-commit": "pnpm changeset add ",
+    "cs-add": "pnpm changeset add",
     "cs-status": "pnpm changeset status --verbose",
     "cs-bump": "pnpm changeset version",
     "cs-pre-publish": "npm test && npm run format-fix && npm run build",
