@@ -1,5 +1,11 @@
 # eslint-plugin-ezlint
 
+## 1.6.1
+
+### Patch Changes
+
+- 458adb9: fixed export path within package.json
+
 ## 1.6.0
 
 ### Minor Changes
