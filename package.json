@@ -23,20 +23,13 @@
     "test": "node --test",
     "cs-add": "pnpm changeset add",
     "cs-status": "pnpm changeset status --verbose",
-    "cs-bump": "pnpm changeset version",
-    "cs-pre-publish": "npm test && npm run format-fix && npm run build",
-    "cs-publish": "pnpm changeset publish",
-    "preversion": "npm test",
-    "version": "npm run format-fix && npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm publish"
+    "cs-bump": "npm test && pnpm changeset version",
+    "cs-publish": "npm run build && pnpm changeset publish",
+    "old-way-preversion": "npm test",
+    "old-way-version": "npm run format-fix && npm run build",
+    "old-way-postversion": "git push && git push --tags && cd dist && npm publish"
   },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "ezlint",
-    "eslint-plugin-ezlint"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
