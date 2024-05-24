@@ -1,7 +1,6 @@
 .changeset
 .husky
 .vscode
-dist/
 node_modules/
 src/
 .eslintignore

@@ -1,5 +1,11 @@
 # eslint-plugin-ezlint
 
+## 1.6.2
+
+### Patch Changes
+
+- 9aab7e6: accidentally add "dist" to npmignore
+
 ## 1.6.1
 
 ### Patch Changes
