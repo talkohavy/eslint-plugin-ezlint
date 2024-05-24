@@ -21,6 +21,11 @@
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.mjs --ignore-path .prettierignore",
     "build": "tsup --config tsup.config.js",
     "test": "node --test",
+    "cs-commit": "pnpm changeset add ",
+    "cs-status": "pnpm changeset status --verbose",
+    "cs-bump": "pnpm changeset version",
+    "cs-pre-publish": "npm test && npm run format-fix && npm run build",
+    "cs-publish": "pnpm changeset publish",
     "preversion": "npm test",
     "version": "npm run format-fix && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish"
@@ -62,6 +67,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.1",
+    "@changesets/cli": "^2.27.3",
+    "@types/node": "^20.12.12",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
