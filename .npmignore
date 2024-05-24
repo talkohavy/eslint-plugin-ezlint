@@ -1,0 +1,14 @@
+.changeset
+.husky
+.vscode
+dist/
+node_modules/
+src/
+.eslintignore
+.eslintrc.json
+.npmrc.example
+.prettierignore
+.prettierrc.mjs
+biome.json
+CHANGELOG.md
+tsup.config.js
