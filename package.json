@@ -2,7 +2,7 @@
   "name": "eslint-plugin-ezlint",
   "version": "1.6.0",
   "description": "The eslint config that goes perfectly with your prettier config.",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "type": "module",
   "exports": {
     ".": {
