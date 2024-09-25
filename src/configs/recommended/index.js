@@ -49,10 +49,13 @@ export const recommendedConfig = {
       files: ['**/*.md'],
       processor: 'markdown/markdown',
     },
-    // applies only to code blocks
     {
-      files: ['**/*.md/*.js'],
-      rules: { strict: 'off' },
+      // 3. Optionally, customize the configuration ESLint uses for ```js/jsx/ts/tsx
+      files: ['**/*.md/*.js', '**/*.md/*.tsx'],
+      rules: {
+        strict: 'off',
+        'import/no-unresolved': 'off',
+      },
     },
   ],
   rules: {
