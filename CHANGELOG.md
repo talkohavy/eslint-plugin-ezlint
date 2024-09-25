@@ -1,5 +1,11 @@
 # eslint-plugin-ezlint
 
+## 1.6.4
+
+### Patch Changes
+
+- markdown - added more files types
+
 ## 1.6.3
 
 ### Patch Changes
