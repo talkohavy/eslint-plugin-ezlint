@@ -19,22 +19,9 @@
     "format-prettier": "prettier . --check --config ./.prettierrc.mjs --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.mjs --ignore-path .prettierignore",
     "build": "tsup --config tsup.config.js",
-    "test": "node --test",
-    "cs-add": "pnpm changeset add",
-    "cs-status": "pnpm changeset status --verbose",
-    "cs-bump": "npm test && pnpm changeset version",
-    "cs-publish": "npm run build && pnpm changeset publish && git push --follow-tags",
-    "old-way-preversion": "npm test",
-    "old-way-version": "npm run format-fix && npm run build",
-    "old-way-postversion": "git push && git push --tags && cd dist && npm publish"
+    "test": "node --test"
   },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "ezlint",
-    "eslint-plugin-ezlint"
-  ],
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin", "ezlint", "eslint-plugin-ezlint"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/eslint-plugin-ezlint"
@@ -71,7 +58,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.1",
-    "@changesets/cli": "^2.27.3",
     "@types/node": "^20.12.12",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
