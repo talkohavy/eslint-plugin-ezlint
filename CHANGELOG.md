@@ -1,5 +1,11 @@
 # eslint-plugin-ezlint
 
+## 1.6.3
+
+### Patch Changes
+
+- in markdown, avoid checking import paths
+
 ## 1.6.2
 
 ### Patch Changes
