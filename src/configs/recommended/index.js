@@ -51,7 +51,7 @@ export const recommendedConfig = {
     },
     {
       // 3. Optionally, customize the configuration ESLint uses for ```js/jsx/ts/tsx
-      files: ['**/*.md/*.js', '**/*.md/*.tsx'],
+      files: ['**/*.md/*.js', '**/*.md/*.jsx', '**/*.md/*.ts', '**/*.md/*.tsx'],
       rules: {
         strict: 'off',
         'import/no-unresolved': 'off',
