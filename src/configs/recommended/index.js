@@ -55,6 +55,8 @@ export const recommendedConfig = {
       rules: {
         strict: 'off',
         'import/no-unresolved': 'off',
+        'typescript-eslint/no-unused-vars': 'off',
+        'import/first': 'off',
       },
     },
   ],
