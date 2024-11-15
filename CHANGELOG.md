@@ -1,5 +1,11 @@
 # eslint-plugin-ezlint
 
+## 1.6.6
+
+### Patch Changes
+
+- BUGFIX: earlier version missed a @
+
 ## 1.6.5
 
 ### Patch Changes
